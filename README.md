@@ -25,4 +25,4 @@ This repository contains my SQL solutions for the 8 Week SQL Challenge by Data W
 
 In this challenge, we analyze a small diner’s sales data to gain insights into customer preferences and behavior.
 
-[Solution]()
+[Solution](Case Study #1)
