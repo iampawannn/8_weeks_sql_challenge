@@ -25,4 +25,7 @@ This repository contains my SQL solutions for the 8 Week SQL Challenge by Data W
 
 In this challenge, we analyze a small dataset, to answer a few simple questions about customers, especially about customer's visiting patterns, how much money they’ve spent and also which menu items are their favourite.
 
+<img src="https://8weeksqlchallenge.com/images/case-study-designs/1.png" alt="Logo" width="500">
+
+
 [Solution](Case-Study-1/Queries.sql)
