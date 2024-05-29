@@ -21,7 +21,7 @@ This repository contains my SQL solutions for the 8 Week SQL Challenge by Data W
 
 ## Challenges
 
-### Week 1: Danny's Diner
+### [Week 1: Danny's Diner](Case-Study-1/)
 
 In this challenge, we analyze a small diner’s sales data to gain insights into customer preferences and behavior.
 
