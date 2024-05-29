@@ -143,3 +143,27 @@ FROM [Danny's_Dinner].dbo.sales AS s
 INNER JOIN [Danny's_Dinner].dbo.menu AS m
 ON s.product_id = m.product_id
 GROUP BY s.customer_id
+
+--In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi
+-- how many points do customer A and B have at the end of January?
+
+WITH cte AS 
+(
+	SELECT s.customer_id, s.order_date, s.product_id, me.join_date
+	FROM [Danny's_Dinner].dbo.sales AS s
+	INNER JOIN [Danny's_Dinner].dbo.members AS me
+	ON s.customer_id = me.customer_id
+	WHERE s.order_date BETWEEN me.join_date AND DATEADD(WEEK, 1, me.join_date)
+)
+SELECT 
+	f.customer_id, 
+	SUM(
+		CASE WHEN m.product_name <> 'sushi' THEN m.price * 20
+		ELSE m.price * 10
+		END
+	) AS total_points
+FROM cte AS f
+INNER JOIN [Danny's_Dinner].dbo.menu AS m
+ON f.product_id = m.product_id
+WHERE MONTH(f.order_date) = 1
+GROUP BY f.customer_id;
